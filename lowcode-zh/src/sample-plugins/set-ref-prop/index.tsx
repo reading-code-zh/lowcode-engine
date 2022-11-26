@@ -70,6 +70,7 @@ function addonCombine(metadata: TransformedComponentMetadata) {
 export const registerRefProp = () => {
   return {
     init() {
+      // 注册物料元数据管道函数，在物料信息初始化时执行。
       material.registerMetadataTransducer(addonCombine, 110, 'register-ref-prop')
     }
   };

@@ -33,6 +33,8 @@ import {
 import assets from './assets.json'
 import { registerRefProp } from 'src/sample-plugins/set-ref-prop';
 
+// plugin API 见 https://lowcode-engine.cn/docV2/ibh9fh
+// NPM  https://lowcode-engine.cn/docV2/ngm44i
 export default async function registerPlugins() {
 
   // 使用文档提示
@@ -41,15 +43,17 @@ export default async function registerPlugins() {
   // 注意 Inject 插件必须在其他插件前注册，且所有插件的注册必须 await
   await plugins.register(Inject);
 
+  //
   await plugins.register(registerRefProp);
 
-  // plugin API 见 https://lowcode-engine.cn/docV2/ibh9fh
+  // SchemaPlugin
   SchemaPlugin.pluginName = 'SchemaPlugin';
   await plugins.register(SchemaPlugin);
 
   SimulatorResizer.pluginName = 'SimulatorResizer';
   plugins.register(SimulatorResizer);
 
+  // 初始化编辑器
   const editorInit = (ctx: ILowCodePluginContext) => {
     return {
       name: 'editor-init',
@@ -116,6 +120,7 @@ export default async function registerPlugins() {
     };
   }
   builtinPluginRegistry.pluginName = 'builtinPluginRegistry';
+  // 注册组件
   await plugins.register(builtinPluginRegistry);
 
   // 设置内置 setter 和事件绑定、插件绑定面板
@@ -157,6 +162,7 @@ export default async function registerPlugins() {
   // 注册中英文切换
   await plugins.register(ZhEnPlugin);
 
+  // TODO: 怎么用的，如何添加物料
   const loadAssetsSample = (ctx: ILowCodePluginContext) => {
     return {
       name: 'loadAssetsSample',
@@ -226,6 +232,7 @@ export default async function registerPlugins() {
   saveSample.pluginName = 'saveSample';
   await plugins.register(saveSample);
 
+  // 接口请求
   DataSourcePanePlugin.pluginName = 'DataSourcePane';
   // 插件参数声明 & 传递，参考：https://www.yuque.com/lce/doc/ibh9fh#peEmG
   await plugins.register(DataSourcePanePlugin, {
@@ -240,6 +247,7 @@ export default async function registerPlugins() {
     ]
   });
 
+  // TODO: 干什么的
   CodeEditor.pluginName = 'CodeEditor';
   await plugins.register(CodeEditor);
 
@@ -271,6 +279,7 @@ export default async function registerPlugins() {
   previewSample.pluginName = 'previewSample';
   await plugins.register(previewSample);
 
+  // TODO: 干什么的
   const customSetter = (ctx: ILowCodePluginContext) => {
     return {
       name: '___registerCustomSetter___',

@@ -270,12 +270,15 @@ export const getPackagesFromLocalStorage = (scenarioName: string) => {
 }
 
 export const getPageSchema = async (scenarioName: string = 'index') => {
+
+  // 从 localstorage 获取 schema
   const pageSchema = getProjectSchemaFromLocalStorage(scenarioName).componentsTree?.[0]
 
   if (pageSchema) {
     return pageSchema;
   }
 
+  // public/schema.json
   return await request('./schema.json');
 };
 
