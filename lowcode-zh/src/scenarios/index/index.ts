@@ -8,7 +8,7 @@ import '../../universal/global.scss';
 
   console.log('bll-start scenarios main')
 
-  // 注册插件
+  // 注册切换组件库的插件
   await plugins.register(scenarioSwitcher);
 
   // 注册一堆的插件

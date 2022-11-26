@@ -70,7 +70,7 @@
     },
     {
       "componentName": "Link",
-      "title": "链接",
+      "title": "链接2222",
       "npm": {
         "package": "@alifd/ali-lowcode-components",
         "version": "latest",
@@ -115,7 +115,7 @@
             "type": "oneOfType",
             "value": ["string", "node"]
           },
-          "defaultValue": "这是一个超链接"
+          "defaultValue": "这是一个超链接000"
         },
         {
           "name": "style",
@@ -165,7 +165,7 @@
               }
             },
             "setter": "StringSetter",
-            "defaultValue": "这是一个超链接"
+            "defaultValue": "这是一个超链接111"
           },
           {
             "name": "linkType",
@@ -19688,19 +19688,19 @@
         {
           "componentName": "Link",
           "library": "Next",
-          "title": "链接",
+          "title": "链接111",
           "icon": "",
           "snippets": [
             {
-              "title": "链接",
+              "title": "链接111",
               "screenshot": "https://img.alicdn.com/tfs/TB15DZVReL2gK0jSZFmXXc7iXXa-200-200.svg",
               "schema": {
                 "componentName": "Link",
-                "title": "链接",
+                "title": "链接111",
                 "props": {
                   "href": "https://fusion.design",
                   "target": "_blank",
-                  "children": "这是一个超链接"
+                  "children": "这是一个超链接222"
                 }
               }
             }
