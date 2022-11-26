@@ -34,8 +34,11 @@ import assets from './assets.json'
 import { registerRefProp } from 'src/sample-plugins/set-ref-prop';
 
 export default async function registerPlugins() {
+
+  // 使用文档提示
   await plugins.register(ManualPlugin);
 
+  // 注意 Inject 插件必须在其他插件前注册，且所有插件的注册必须 await
   await plugins.register(Inject);
 
   await plugins.register(registerRefProp);

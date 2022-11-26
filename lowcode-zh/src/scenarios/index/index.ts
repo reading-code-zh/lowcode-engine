@@ -10,6 +10,8 @@ import '../../universal/global.scss';
 
   // 注册插件
   await plugins.register(scenarioSwitcher);
+
+  // 注册一堆的插件
   await registerPlugins();
 
   init(document.getElementById('lce-container')!, {

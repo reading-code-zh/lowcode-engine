@@ -24,6 +24,12 @@ const getCurrentScenarioUrls = () => {
   return scenarios.filter((scenario: Scenario) => scenario.name === getCurrentScenarioName())[0]?.urls;
 }
 
+/**
+ *
+ * @param props
+ * @returns
+ * @description 头部展示的下拉选择场景的
+ */
 function Switcher(props: any) {
   const urls = getCurrentScenarioUrls();
   return (<>
@@ -71,8 +77,9 @@ export const scenarioSwitcher = (ctx: ILowCodePluginContext) => {
       const { skeleton } = ctx;
       skeleton.add({
         name: 'scenarioSwitcher',
+      // export declare type IWidgetConfigArea = 'leftArea' | 'left' | 'rightArea' | 'right' | 'topArea' | 'top' | 'toolbar' | 'mainArea' | 'main' | 'center' | 'centerArea' | 'bottomArea' | 'bottom' | 'leftFixedArea' | 'leftFloatArea' | 'stages';
         area: 'topArea',
-        type: 'Widget',
+        type: 'Widget',// 展示类型用于区分插件在设计器内可操作的几种不同界面类型。主要的几种类型为PanelDock、Widget、Dock，另有Panel类型目前不推荐使用。
         props: {
           align: 'right',
           width: 80,
