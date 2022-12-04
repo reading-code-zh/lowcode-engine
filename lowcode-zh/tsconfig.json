@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,
-    "lib": ["es2015", "dom"],
+    "lib": ["es2015", "dom","ES5"],
+    "emitDecoratorMetadata": true,
     // Target latest version of ECMAScript.
     "target": "esnext",
     // Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
@@ -38,7 +39,8 @@
     "outDir": "lib"
   },
   "include": [
-    "./src/"
+    "./src/",
+    "../packages/"
   ],
   "exclude": ["**/test", "**/lib", "**/es", "node_modules"]
 }

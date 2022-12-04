@@ -12,7 +12,6 @@ export default class LeftFixedPane extends Component<{ area: Area<PanelConfig, P
     this.props.area.skeleton.editor.get('designer')?.touchOffsetObserver();
   }
 
-
   render() {
     const { area } = this.props;
     const width = area.current?.config.props?.width;

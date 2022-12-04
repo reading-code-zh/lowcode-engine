@@ -2,11 +2,12 @@ const { join } = require('path');
 const fs = require('fs-extra');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 const scenarioNames = fs.readdirSync(join('./src/scenarios')).filter(name => !name.startsWith('.'));
 const { version } = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
-module.exports = ({ onGetWebpackConfig }) => {
+module.exports = ({context, onGetWebpackConfig }) => {
   onGetWebpackConfig((config) => {
     config.resolve.plugin('tsconfigpaths').use(TsconfigPathsPlugin, [
       {
@@ -41,6 +42,11 @@ module.exports = ({ onGetWebpackConfig }) => {
             filename: `${name}.html`,
           },
         ]);
+      config
+        .plugin('define')
+        .use(context.webpack.DefinePlugin, [{
+          VERSION_PLACEHOLDER: JSON.stringify('1.0.0'),
+        }]);
     })
 
     config
@@ -65,5 +71,24 @@ module.exports = ({ onGetWebpackConfig }) => {
         .add(/node_modules/)
         .end()
       .type('javascript/auto');
+
+      // config.module
+      // .rule('js$')
+      // .test(/\.js$/)
+      // .include
+      //   .add(path.join(__dirname,'src/scenarios/index/lib'))
+      //   .end()
+      // .use('babel')
+      //   .loader('babel-loader')
+      //   .options({
+      //     "presets": [
+      //         "@babel/preset-env"
+      //     ],
+      //       "plugins": [
+      //         ["@babel/plugin-proposal-decorators", { "legacy": true }],
+      //         ["@babel/plugin-proposal-class-properties", { "loose": true }]
+      //       ]
+      //   })
+
   });
 };

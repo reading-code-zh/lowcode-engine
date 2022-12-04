@@ -30,6 +30,7 @@ export * from './modules/skeleton-types';
 export * from './modules/designer-types';
 export * from './modules/lowcode-types';
 
+
 registerDefaults();
 
 const editor = new Editor();
@@ -42,6 +43,7 @@ editor.set('skeleton' as any, innerSkeleton);
 const designer = new Designer({ editor });
 editor.set('designer' as any, designer);
 
+// 实例化 plugins
 const plugins = new LowCodePluginManager(editor).toProxy();
 editor.set('plugins' as any, plugins);
 

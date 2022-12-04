@@ -31,7 +31,7 @@ import {
   preview,
 } from './utils';
 import assets from './assets.json'
-import { registerRefProp } from 'src/sample-plugins/set-ref-prop';
+import { registerRefProp } from '../sample-plugins/set-ref-prop';
 
 // plugin API 见 https://lowcode-engine.cn/docV2/ibh9fh
 // NPM  https://lowcode-engine.cn/docV2/ngm44i

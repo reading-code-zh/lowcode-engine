@@ -19,7 +19,7 @@ import TitleSetter from '@alilc/lowcode-setter-title';
 import BehaviorSetter from '../../setters/behavior-setter';
 import CustomSetter from '../../setters/custom-setter';
 import Logo from '../../sample-plugins/logo';
-import { registerRefProp } from 'src/sample-plugins/set-ref-prop';
+import { registerRefProp } from '../../sample-plugins/set-ref-prop';
 
 import {
   loadIncrementalAssets,

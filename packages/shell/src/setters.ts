@@ -32,3 +32,4 @@ export default class Setters {
     return registerSetter(typeOrMaps, setter);
   }
 }
+
